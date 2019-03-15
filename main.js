@@ -241,7 +241,30 @@ const petCardBuilder = (arrayOfPets) => {
     printToDom('pet-container', domString);
 };
 
+const buttonClick = (e) => {
+    const buttonId = e.target.id;
+    const selectedPets = [];
+    pets.forEach((pet) => {
+        if (pet.type === buttonId) {
+            selectedPets.push(pet);
+        }
+    })
+    if (buttonId === 'All') {
+        petCardBuilder(pets);
+    } else {
+        petCardBuilder(selectedPets);
+    }
+}
+
+const buttonEvents = () => {
+    document.getElementById('All').addEventListener('click', buttonClick);
+    document.getElementById('cat').addEventListener('click', buttonClick);
+    document.getElementById('dino').addEventListener('click', buttonClick);
+    document.getElementById('dog').addEventListener('click', buttonClick);
+}
+
 const init = () => {
+    buttonEvents();
     petCardBuilder(pets);
 };
 
