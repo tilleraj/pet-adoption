@@ -125,7 +125,7 @@ const pets = [
         color: "Yellow",
         specialSkill: "Does not freak out if you haven’t seen his favorite movie (The Big Lebowski).",
         type: "cat",
-        imageUrl: "http://www.funnycatsite.com/pictures/Close_Up_Yawn.jpg"
+        imageUrl: "http://via.placeholder.com/300x200"
     },
     {
         name: "Salem",
@@ -139,14 +139,14 @@ const pets = [
         color: "Blue",
         specialSkill: "Listens attentively to boring stories.",
         type: "dog",
-        imageUrl: "http://dailynewsdig.com/wp-content/uploads/2014/03/Creative-And-Funny-Dog-Stock-Photography-Pictures-2.jpg"
+        imageUrl: "http://via.placeholder.com/300x200"
     },
     {
         name: "Spooky",
         color: "Black",
         specialSkill: "Uses litter box at appropriate hours.",
         type: "cat",
-        imageUrl: "http://www.funnycatsite.com/pictures/Lazy_White_Cat.jpg"
+        imageUrl: "http://via.placeholder.com/300x200"
     },
     {
         name: "Miss kitty",
@@ -160,7 +160,7 @@ const pets = [
         color: "Orange",
         specialSkill: "Is comfortable with jokes about his receding hairline.",
         type: "cat",
-        imageUrl: "http://funnyanimalphoto.com/wp-content/uploads/2013/08/cat_caught_mouse_thegatewaypundit.jpg"
+        imageUrl: "http://via.placeholder.com/300x200"
     },
     {
         name: "Buddy",
@@ -209,7 +209,7 @@ const pets = [
         color: "Green",
         specialSkill: "Gives hugs with appropriate pressure and for the right length of time.",
         type: "cat",
-        imageUrl: "http://img.izismile.com/img/img2/20090219/cats_02.jpg"
+        imageUrl: "http://via.placeholder.com/300x200"
     },
     {
         name: "Lucy",
@@ -227,14 +227,25 @@ const printToDom = (divId, textToPrint) => {
 
 const petCardBuilder = (arrayOfPets) => {
     let domString = '';
-
+    let petType = '';
     arrayOfPets.forEach(pet => {
+        if (pet.type === 'cat'){
+            petType = 'Cat'
+        } else if (pet.type === 'dino'){
+            petType = 'Dino'
+        } else if (pet.type === 'dog'){
+            petType = 'Dog'
+        } else {
+            petType = 'Something went wrong'
+        }
         domString += `<div class="pet">`;
         domString += `<h3>${pet.name}</h3>`;
-        domString += `<img src="${pet.imageUrl}" alt="A photo of ${pet.name}"`;
+        domString += `<div class="pet-img-container">`;
+        domString += `<img src="${pet.imageUrl}" alt="A photo of ${pet.name}">`;
+        domString += `</div>`;
         domString += `<p>${pet.color}</p>`;
         domString += `<p>${pet.specialSkill}</p>`;
-        domString += `<p class="${pet.type}">${pet.type}</p>`;
+        domString += `<p class="${pet.type}">${petType}</p>`;
         domString += `</div>`;
     });
 
