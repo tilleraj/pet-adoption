@@ -26,12 +26,6 @@ Visit the node [website](https://nodejs.org/) and click on the green button with
 $ npm install -g http-server
 ```
 
-### HTTP-Server
-Http-server is a node plugin that allows us to run web pages.  We will install it using node's NPM (Node Package Manager) service.
-```
-$ npm install -g http-server
-```
-
 ## Running
 ```
 1. Navigate to the project folder in command line interface and type: hs -p 8000  
