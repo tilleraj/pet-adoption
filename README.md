@@ -31,4 +31,4 @@ $ npm install -g http-server
 ```
 $ hs -p 8000  
 ```
-2. In your web browser, navigate to: [website](http://localhost:8000)
+2. In your web browser, navigate to: [http://localhost:8000](http://localhost:8000)
